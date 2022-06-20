@@ -1,0 +1,31 @@
+--- !ruby/object:Game
+word: individual
+turns: 6
+word_array:
+- i
+- n
+- d
+- i
+- v
+- i
+- d
+- u
+- a
+- l
+guess_display:
+- i
+- _
+- _
+- i
+- _
+- i
+- _
+- _
+- a
+- _
+guessed_letters:
+- e
+- a
+- s
+- i
+- o

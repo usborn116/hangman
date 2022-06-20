@@ -1,0 +1,22 @@
+--- !ruby/object:Game
+word: trials
+turns: 5
+word_array:
+- t
+- r
+- i
+- a
+- l
+- s
+guess_display:
+- t
+- _
+- _
+- a
+- _
+- s
+guessed_letters:
+- e
+- a
+- t
+- s
