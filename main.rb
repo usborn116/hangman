@@ -8,18 +8,20 @@ class Game
     puts 'Would you like to start a new game or load an old one? Type "new" or "load"'
     input = gets.chomp
     new_game if input == 'new'
-    if input == 'load'
-      puts 'What is the name of the game you want to load? Here are the existing games:'
-      p Dir.entries('./saved_games')
-      loaded = gets.chomp
-      game_file = File.open(File.join(Dir.pwd, "/saved_games/#{loaded}"), 'r') { |f| f.read}
-      game = YAML.load(game_file)
-      puts 'Game loaded!'
-      puts "Word Progress: #{game.guess_display}"
-      puts "You've guessed these letters: #{game.guessed_letters}"
-      puts "You've used #{game.turns - 1} turns"
-      game.play
-    end
+    load_game if input == 'load'
+  end
+
+  def load_game
+    puts 'What is the name of the game you want to load? Here are the existing games:'
+    p Dir.entries('./saved_games')
+    loaded = gets.chomp
+    game_file = File.open(File.join(Dir.pwd, "/saved_games/#{loaded}"), 'r') { |f| f.read }
+    game = YAML.load(game_file)
+    puts 'Game loaded!'
+    puts "Word Progress: #{game.guess_display}"
+    puts "You've guessed these letters: #{game.guessed_letters}"
+    puts "You've used #{game.turns - 1} turns"
+    game.play
   end
 
   def new_game
@@ -35,9 +37,9 @@ class Game
   end
 
   def save
-    puts "Name your saved game"
+    puts 'Name your saved game'
     filename = gets.chomp
-    File.open(File.join(Dir.pwd, "/saved_games/#{filename}"), 'w') { |file| file.write(self.to_yaml)}
+    File.open(File.join(Dir.pwd, "/saved_games/#{filename}"), 'w') { |file| file.write(self.to_yaml) }
     puts 'Game Saved'
   end
 
