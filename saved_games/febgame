@@ -1,0 +1,29 @@
+--- !ruby/object:Game
+word:
+- g
+- e
+- n
+- e
+- r
+- a
+- t
+- i
+- o
+- n
+guess_display:
+- _
+- e
+- _
+- e
+- _
+- _
+- _
+- _
+- _
+- _
+guessed_letters:
+- d
+- e
+- s
+solved: false
+turns: 4
